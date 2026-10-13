@@ -7,10 +7,24 @@ import random
 # 게임 객체를 파악한다
 
 class Bball:
-    pass
+    def __init__(self):
+            
+    
+    def update(self):
+            
+    
+    def draw(self):
+            
+   
 
 class Sball:
-    pass
+    def __init__(self):
+                
+        
+    def update(self):
+                
+        
+    def draw(self):
 
 
 
