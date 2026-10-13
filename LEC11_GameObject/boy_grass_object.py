@@ -5,32 +5,36 @@ import random
 # Game object class here
 
 # 게임 객체를 파악한다
+# boy, grass 가 필요하다
+class Sball:
+    def __init__(self):
+        self.x, self.y = random.randint(100,700), 599
+        self.dropspeed = random.randint(10,50)
+        self.image = load_image('ball21x21.png')
+
+    def draw(self):
+        self.image.draw(self.x,self.y)
+
+    def update(self):
+        if (self.y > 50):
+            self.y -= self.dropspeed
+
 
 class Bball:
     def __init__(self):
         self.x, self.y = random.randint(100,700), 599
         self.dropspeed = random.randint(10,50)
-        self.image = load_image('ball21x21.png')
-    
-    def update(self):
-        self.y -= self.dropspeed
-    
-    def draw(self):
-        self.image.draw(self.x,self.y)   
-   
+        self.image = load_image('ball41x41.png')
 
-class Sball:
-    def __init__(self):
-        self.x, self.y = random.randint(100,700), 599
-        self.dropspeed = random.randint(10,50)
-        self.image = load_image('ball41x21.png')
-        
-    def update(self):
-        self.y -= self.dropspeed
-        
     def draw(self):
         self.image.draw(self.x,self.y)
 
+    def update(self):
+        if (self.y > 50):
+            self.y -= self.dropspeed
+        
+
+    
 
 class Boy:
     def __init__(self):
@@ -45,7 +49,8 @@ class Boy:
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
 
-class Grass:    
+class Grass:    # 클래스는 대문자로 시작한다.
+    # 잔디 속성을 초기화
     def __init__(self):
         self.image = load_image('grass.png')
 
@@ -89,8 +94,8 @@ def reset_world():
     running = True
     world = []
 
-    # grass = Grass()
-    # world.append(grass)
+    grass = Grass()
+    world.append(grass)
 
     team = [Boy() for i in range(10)]
     world += team # world 리스트에 team 리스트를 합친다.
@@ -98,11 +103,12 @@ def reset_world():
     zombie1 = zombie()
     world.append(zombie1)
 
-    bigs = [Bball() for i in range(10)]
+    bigs = [Bball() for i in range(11)]
     world += bigs
 
-    smalls = [Sball() for i in range(10)]
+    smalls = [Sball() for i in range(11)]
     world += smalls
+    
 
     
 
@@ -120,7 +126,7 @@ def render_world():
 open_canvas()
 
 
-reset_world()
+reset_world() # 세상을 구성하는 객체
 
 
 while running:
