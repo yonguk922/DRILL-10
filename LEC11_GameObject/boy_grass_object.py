@@ -97,6 +97,12 @@ def reset_world():
     zombie1 = zombie()
     world.append(zombie1)
 
+    team2 = [Bball() for i in range(10)]
+    world += team2
+
+    team3 = [Sball() for i in range(10)]
+    world += team3
+
     
 
 def update_world():
