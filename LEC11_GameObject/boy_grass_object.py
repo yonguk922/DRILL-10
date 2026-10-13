@@ -9,6 +9,9 @@ import random
 class Bball:
     pass
 
+class Sball:
+    pass
+
 
 
 class Boy:
