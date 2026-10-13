@@ -5,7 +5,11 @@ import random
 # Game object class here
 
 # 게임 객체를 파악한다
-    
+
+class Bball:
+    pass
+
+
 
 class Boy:
     def __init__(self):
