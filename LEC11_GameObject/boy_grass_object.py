@@ -13,7 +13,7 @@ class Bball:
         self.image = load_image('ball21x21.png')
     
     def update(self):
-        self.y -= 30
+        self.y -= self.dropspeed
     
     def draw(self):
         self.image.draw(self.x,self.y)   
@@ -26,7 +26,7 @@ class Sball:
         self.image = load_image('ball41x21.png')
         
     def update(self):
-        self.y -= 30
+        self.y -= self.dropspeed
         
     def draw(self):
         self.image.draw(self.x,self.y)
