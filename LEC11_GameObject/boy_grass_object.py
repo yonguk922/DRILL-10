@@ -8,24 +8,26 @@ import random
 
 class Bball:
     def __init__(self):
-            
+        self.x, self.y = random.randint(100,700), 599
+        self.image = load_image('ball21x21.png')
     
     def update(self):
-            
+        self.y -= 30
     
     def draw(self):
-            
+        self.image.draw(self.x,self.y)   
    
 
 class Sball:
     def __init__(self):
-                
+        self.x, self.y = random.randint(100,700), 599
+        self.image = load_image('ball41x21.png')
         
     def update(self):
-                
+        self.y -= 30
         
     def draw(self):
-
+        self.image.draw(self.x,self.y)
 
 
 class Boy:
